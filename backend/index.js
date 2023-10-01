@@ -12,6 +12,7 @@ const verifyToken=require('./middleware/verifytoken')
 
 //Models
 const responseModel=require('./model/resposeModel')
+const likeModel=require('./model/LikeModel')
 
 //Routes
 const userRoute=require('./route/userRoute')
@@ -98,6 +99,8 @@ app.get('/response/single/:id',verifyToken,async(req,res)=>{
 app.delete('/:id',verifyToken,async(req,res)=>{
     try{
         const response=await responseModel.findByIdAndDelete(req.params.id)
+        await likeModel.deleteMany({response:req.params.id})
+
 
         res.status(200).json({message:"Deleted successfully!"})
     }catch(err){
