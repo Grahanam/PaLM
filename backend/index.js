@@ -6,7 +6,8 @@ const app=express()
 const axios = require('axios');
 const port=process.env.port||4000
 const url=process.env.mongodbURL
-const aiApiurl='https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=AIzaSyCNSGaMwY9ItyiA5zgNt3AcQVnNDDgVjug'
+const palmkey=process.env.KEY
+const aiApiurl=`https://generativelanguage.googleapis.com/v1beta2/models/text-bison-001:generateText?key=${palmkey}`
 const verifyToken=require('./middleware/verifytoken')
 
 //Models
