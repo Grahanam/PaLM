@@ -1,12 +1,12 @@
 import { faHeart, faHeartBroken } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useState,useEffect } from "react"
-
+const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
 const Likebutton=({id,token,userId,update})=>{
     const [check,setcheck]=useState(false)
     const checklike=()=>{
-        fetch(`http://localhost:4000/like/check?user=${userId}&response=${id}`,{
+        fetch(`${API_BASE_URL}/like/check?user=${userId}&response=${id}`,{
             method:'GET',
             headers:{
                 "Accept":"application/json",
@@ -23,7 +23,7 @@ const Likebutton=({id,token,userId,update})=>{
     }
 
     const givelike=()=>{
-        fetch('http://localhost:4000/like/',{
+        fetch(`${API_BASE_URL}/like/`,{
             method:'POST',
             headers:{
                 "Accept":"application/json",
@@ -44,7 +44,7 @@ const Likebutton=({id,token,userId,update})=>{
     }
 
     const removelike=({nooflike})=>{
-        fetch(`http://localhost:4000/like?user=${userId}&response=${id}`,{
+        fetch(`${API_BASE_URL}/like?user=${userId}&response=${id}`,{
             method:'DELETE',
             headers:{
                 "Accept":"application/json",

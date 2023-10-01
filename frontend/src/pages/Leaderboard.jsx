@@ -2,14 +2,14 @@ import { faArrowRight, faChevronRight, faHeart } from "@fortawesome/free-solid-s
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useEffect,useState } from "react"
 import { Link } from "react-router-dom"
-
+const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
 
 const Leaderboard=({token})=>{
     const [data,setdata]=useState([])
   
     const getresponse=()=>{
-      fetch(`http://localhost:4000/response`,{
+      fetch(`${API_BASE_URL}/response`,{
         method:'GET',
         headers:{
           "Accept":"application/json",

@@ -4,19 +4,16 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {useNavigate} from 'react-router-dom'
 import {faBars, faBookBookmark, faCheck, faChevronLeft, faChevronRight, faHandPaper, faLock, faLockOpen, faMedal, faNewspaper, faPenToSquare, faPlus, faStar, faTrash} from '@fortawesome/free-solid-svg-icons'
 import {faCircle} from '@fortawesome/free-regular-svg-icons'
-
+const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
 
 
 const Nav=({data,update,token,open,setopen})=>{
     const {id}=useParams()
     const navigate=useNavigate()
-    // const [data,setdata]=useState([])
-    // const [open,setopen]=useState(false)
-    // const [progress,setprogress]=useState([])
     
     const deleteresponse=(id)=>{
-      fetch(`http://localhost:4000/${id}`,{
+      fetch(`${API_BASE_URL}/${id}`,{
         method:'DELETE',
         headers:{
           "Accept":"application/json",

@@ -4,12 +4,13 @@ import Likebutton from "../components/likebutton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSave } from "@fortawesome/free-solid-svg-icons"
 import ReactMarkdown from "react-markdown"
+const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
 const Response=({userId,saveresponse,token})=>{
     const {id}=useParams()
     const [data,setdata]=useState({})
     const getresponse=()=>{
-        fetch(`http://localhost:4000/response/single/${id}`,{
+        fetch(`${API_BASE_URL}/response/single/${id}`,{
             method:'GET',
             headers:{
                 "Content-Type":"application/json",

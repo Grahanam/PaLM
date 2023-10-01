@@ -1,9 +1,13 @@
-# PaLM-Backend
+# PaLM
 
 
 ## Getting Started
 
-Follow these steps to get started with the project:
+First clone this responsitory
+
+### Backend
+
+Follow these steps to setup server:
 
 
 - Go to project directory
@@ -27,12 +31,9 @@ npm run dev
 ```
 
 
-# Educad-Frontend
+### Frontend
 
-
-## Getting Started
-
-Follow these steps to get started with the project:
+Follow these steps to setup client:
 
 
 - Go to project directory

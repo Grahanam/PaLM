@@ -4,6 +4,7 @@ import {useState,useEffect} from 'react'
 import ReactMarkdown from 'react-markdown'
 
 import LoadingAnimation from '../components/loading'
+const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
 
 const Main=({update,userId,username,token})=>{
@@ -15,11 +16,11 @@ const Main=({update,userId,username,token})=>{
     const example=['In a city where everyone can fly...','Once upon a time in a digital world...']
 
     const getresponse=()=>{
-        // setloading(!loading)
+        
         setloading((prevloading) => !prevloading);
         // console.log(prompt)
         if(prompt!=''){
-            fetch('http://localhost:4000',{
+            fetch(`${API_BASE_URL}`,{
                 method:'POST',
                 headers:{
                     'Accept':'application/json',
@@ -42,7 +43,7 @@ const Main=({update,userId,username,token})=>{
 
     const saveresponse=()=>{
         console.log('userid',userId)
-        fetch('http://localhost:4000/save',{
+        fetch(`${API_BASE_URL}/save`,{
             method:'POST',
             headers:{
                 "Accept":"application/json",
@@ -63,7 +64,7 @@ const Main=({update,userId,username,token})=>{
     const tryexample=(ques)=>{
         setloading((prevloading) => !prevloading);
         setprompt(ques)
-        fetch('http://localhost:4000',{
+        fetch(`${API_BASE_URL}`,{
             method:'POST',
             headers:{
                 'Accept':'application/json',

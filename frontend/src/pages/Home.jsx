@@ -9,9 +9,11 @@ import Response from './Response'
 import Leaderboard from './Leaderboard'
 
 
-
+//containers
 import Nav from '../containers/nav'
 import Topbar from '../containers/topbar'
+
+const API_BASE_URL=import.meta.env.VITE_BASE_URL
 
 
 const Home=()=>{
@@ -23,7 +25,7 @@ const Home=()=>{
   const [data,setdata]=useState([])
   
   const getresponse=()=>{
-    fetch(`http://localhost:4000/response/${userId}`,{
+    fetch(`${API_BASE_URL}/response/${userId}`,{
       method:'GET',
       headers:{
         "Accept":"application/json",
@@ -42,7 +44,7 @@ const Home=()=>{
 
   const saveresponse=(ques,ans,userId)=>{
     console.log('userid',userId)
-    fetch('http://localhost:4000/save',{
+    fetch(`${API_BASE_URL}/save`,{
         method:'POST',
         headers:{
             "Accept":"application/json",
