@@ -17,8 +17,10 @@ cd backend
 
 - Edit .env file
 ```bash
-secretkey=your_secret_key
-url=mongodb_database_url
+mongodbURL=databaseurl
+SECRETKEY=yoursecretkey
+KEY=google PaLM-2 Model access key
+
 ```
 - Install Node Packages
 ```bash
@@ -51,5 +53,7 @@ npm install
 npm run dev
 ```
 
+
+### Done !!
 
 
