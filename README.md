@@ -22,6 +22,8 @@ SECRETKEY=yoursecretkey
 KEY=google PaLM-2 Model access key
 
 ```
+Get your PaLM-2 Model key:https://developers.generativeai.google/products/palm
+
 - Install Node Packages
 ```bash
 npm install 
